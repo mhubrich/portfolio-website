@@ -312,8 +312,8 @@ ul {
 }
 
 .home .home-info {
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 70%;
+    max-width: 70%;
 }
 
 h3.hello {
@@ -344,36 +344,29 @@ h3.my-profession {
 }
 
 .home .home-img {
-    flex: 0 0 40%;
-    max-width: 40%;
-    text-align: center;
+    flex: 0 0 30%;
+    max-width: 30%;
     position: relative;
+    text-align: center;
+    justify-self: center;
+    background: url(../images/profile.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 9px var(--skin-color);
+    animation: profile_animate 8s ease-in-out infinite 1s;
 }
 
-.home-img::after {
-    content: '';
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    border-bottom: 10px solid var(--skin-color);
-    border-right: 10px solid var(--skin-color);
-    right: 20px;
-    bottom: -40px;
-}
+@keyframes profile_animate {
+    0% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
 
-.home-img::before {
-    content: '';
-    position: absolute;
-    height: 80px;
-    width: 80px;
-    border-top: 10px solid var(--skin-color);
-    border-left: 10px solid var(--skin-color);
-    left: -20px;
-    top: -40px;
-}
+    50% {
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
 
-.home .home-img img {
-    margin: auto;
-    border-radius: 5px;
-    height: 400px;
+    100% {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
 }
