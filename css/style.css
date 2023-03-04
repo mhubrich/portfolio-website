@@ -522,3 +522,23 @@ h3.my-profession {
     text-align: justify;
     color: var(--text-black-700);
 }
+
+/* Dark/Light Mode */
+.day-night {
+    position: fixed;
+    right: 0;
+    top: 50px;
+    margin-right: 25px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    z-index: 101;
+    background: var(--bg-black-100);
+    color: var(--text-black-900);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
