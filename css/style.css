@@ -458,21 +458,26 @@ h3.my-profession {
     margin-bottom: 12px;
 }
 
-.experience .experience-content .expertise .expertise-content {
+.experience .experience-content .expertise .expertise-content,
+.experience .experience-content .technology .technology-content {
     flex: 0 0 100%;
     max-width: 100%;
 }
 
 .experience .experience-content .expertise .expertise-item {
-    font-size: 16px;
-    padding: 8px;
+    font-size: 14px;
+    padding: 6px 8px;
     margin-bottom: 8px;
-    border-radius: 20px;
+    border-radius: 16px;
     border: none;
     display: inline-block;
     white-space: nowrap;
     color: white;
     background: var(--skin-color);
+}
+
+.experience .experience-content .technology .technology-content img {
+    height: 33px; /* =6+6+14*1.5 (pad-top + pad-bottom + font-size * line-height) */
 }
 
 .experience .experience-content .education,
