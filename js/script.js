@@ -54,8 +54,23 @@ function updateNav(element) {
         }
     }
 }
+function getActive() {
+    for (let i = 0; i < totalNavList; i++) {
+        if (navList[i].querySelector("a").classList.contains("active")) {
+            return i
+        }
+    }
+    return 0;
+}
 document.querySelector(".more-about-me").addEventListener("click", function () {
-    const sectionIndex = this.getAttribute("data-section-index");
+    const sectionIndex = getActive();
+    showSection(this);
+    updateNav(this);
+    removeBackSection();
+    addBackSection(sectionIndex);
+})
+document.querySelector(".logo-href").addEventListener("click", function () {
+    const sectionIndex = getActive();
     showSection(this);
     updateNav(this);
     removeBackSection();
