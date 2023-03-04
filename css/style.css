@@ -349,8 +349,8 @@ h3.my-profession {
 .contact-sub-title {
     color: var(--text-black-900);
     text-align: center;
-    font-size: 15px;
-    margin-bottom: 60px;
+    font-size: 16px;
+    margin-bottom: 80px;
 }
 
 .contact .contact-info-item {
@@ -366,7 +366,7 @@ h3.my-profession {
 
 .contact .contact-info-item .icon .fa,
 .contact .contact-info-item .icon .fa-brands {
-    font-size: 25px;
+    font-size: 35px;
     color: var(--skin-color);
     transition: all 0.3s ease;
 }
