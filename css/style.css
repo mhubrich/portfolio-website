@@ -160,6 +160,26 @@ ul {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
+/* Dark/Light Mode */
+.day-night {
+    position: fixed;
+    right: 0;
+    top: 25px;
+    margin-right: 25px;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    z-index: 101;
+    background: var(--bg-black-100);
+    color: var(--text-black-900);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
 /* Aside */
 .aside {
     width: 270px;
@@ -523,22 +543,71 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
-/* Dark/Light Mode */
-.day-night {
-    position: fixed;
-    right: 0;
-    top: 25px;
-    margin-right: 25px;
-    height: 40px;
-    width: 40px;
-    line-height: 40px;
-    z-index: 101;
-    background: var(--bg-black-100);
-    color: var(--text-black-900);
+
+/* Portfolio */
+.portfolio .container {
+    padding-bottom: 40px;
+}
+
+.portfolio .portfolio-item {
+    margin-bottom: 30px;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+}
+
+.portfolio .portfolio-item .portfolio-item-inner {
+    background-color: var(--bg-black-100);
     border: 1px solid var(--bg-black-50);
-    border-radius: 50%;
+    border-radius: 10px;
     text-align: center;
-    font-size: 22px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3S ease;
+}
+
+.portfolio .portfolio-item .portfolio-item-inner:hover {
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+.portfolio .portfolio-item .portfolio-item-inner h4 {
+    margin: 10px 0;
+    padding: 0 15px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+
+.portfolio .portfolio-item .portfolio-item-inner p {
+    padding: 0 15px;
+    font-size: 16px;
+    color: var(--text-black-700);
+}
+
+.portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+    padding: 0 15px;
+}
+
+.portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-black-700);
+}
+
+.portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link a:active {
+    color: var(--skin-color);
+}
+
+.portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link i {
+    transition: transform 0.3s ease;
+}
+
+.portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link a:hover i {
+    transform: translateX(5px);
+}
+
+.portfolio .portfolio-item .portfolio-item-inner .portfolio-item-img img {
+    width: 100%;
+    display: block;
+    border-radius: 10px 10px 0 0;
 }
