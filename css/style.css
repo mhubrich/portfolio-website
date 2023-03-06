@@ -69,7 +69,7 @@ ul {
 
 @keyframes slideSection {
     0% {
-        transform: translateX(100%);
+        transform: translateX(-100%);
     }
 
     100% {
@@ -563,6 +563,7 @@ h3.my-profession {
 
 .portfolio .portfolio-item .portfolio-item-inner:hover {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    transform: scale(1.02);
 }
 
 .portfolio .portfolio-item .portfolio-item-inner h4 {
@@ -592,7 +593,7 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
-.portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link a:active {
+.portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link a:hover {
     color: var(--skin-color);
 }
 
