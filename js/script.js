@@ -62,20 +62,17 @@ function getActive() {
     }
     return 0;
 }
-document.querySelector(".more-about-me").addEventListener("click", function () {
+function buttonClick(reference) {
     const sectionIndex = getActive();
-    showSection(this);
-    updateNav(this);
+    showSection(reference);
+    updateNav(reference);
     removeBackSection();
     addBackSection(sectionIndex);
-})
-document.querySelector(".logo-href").addEventListener("click", function () {
-    const sectionIndex = getActive();
-    showSection(this);
-    updateNav(this);
-    removeBackSection();
-    addBackSection(sectionIndex);
-})
+}
+document.querySelector(".about-me").addEventListener("click", function () {buttonClick(this)});
+document.querySelector(".my-experience").addEventListener("click", function () {buttonClick(this)});
+document.querySelector(".my-portfolio").addEventListener("click", function () {buttonClick(this)});
+document.querySelector(".logo-href").addEventListener("click", function () {buttonClick(this)});
 const navTogglerBtn = document.querySelector(".nav-toggler"),
     aside = document.querySelector(".aside");
 navTogglerBtn.addEventListener("click", () => {

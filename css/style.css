@@ -142,7 +142,7 @@ ul {
 .btn {
     font-size: 16px;
     font-weight: 500;
-    padding: 12px 35px;
+    padding: 12px 30px;
     color: white;
     border-radius: 40px;
     display: inline-block;
@@ -360,7 +360,7 @@ h3.my-profession {
 
 /* About */
 .about .container {
-    padding-bottom: 0;
+    padding-bottom: 30px;
 }
 
 .about .about-content {
@@ -535,6 +535,10 @@ h3.my-profession {
     font-size: 16px;
     text-align: justify;
     color: var(--text-black-700);
+}
+
+.experience .experience-content .my-portfolio {
+    margin-top: 30px;
 }
 
 /* Portfolio */
