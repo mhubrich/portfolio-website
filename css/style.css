@@ -380,23 +380,21 @@ h3.my-profession {
     margin-bottom: 60px;
 }
 
-.contact .contact-info-item .icon {
+.contact .contact-info-item a {
     display: inline-block;
 }
 
-.contact .contact-info-item .icon .fa,
-.contact .contact-info-item .icon .fa-brands {
+.contact .contact-info-item a .icon {
     font-size: 35px;
     color: var(--skin-color);
     transition: all 0.3s ease;
 }
 
-.contact .contact-info-item .icon .fa:hover,
-.contact .contact-info-item .icon .fa-brands:hover {
+.contact .contact-info-item a:hover .icon {
     transform: scale(1.15);
 }
 
-.contact .contact-info-item h4 {
+.contact .contact-info-item a h4 {
     font-size: 18px;
     font-weight: 700;
     color: var(--text-black-900);
@@ -404,7 +402,7 @@ h3.my-profession {
     transition: all 0.2s ease;
 }
 
-.contact .contact-info-item h4:hover {
+.contact .contact-info-item a:hover h4 {
     color: var(--skin-color);
 }
 
