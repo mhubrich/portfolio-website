@@ -561,13 +561,15 @@ h3.my-profession {
 }
 
 .portfolio .portfolio-item {
-    /* display: flex; */
+    display: flex;
     flex: 0 0 33.33%;
     max-width: 33.33%;
     margin-bottom: 30px;
 }
 
 .portfolio .portfolio-item .portfolio-item-inner {
+    display: flex;
+    flex-direction: column;
     background-color: var(--bg-black-100);
     border: 1px solid var(--bg-black-50);
     border-radius: 10px;
@@ -597,7 +599,9 @@ h3.my-profession {
 
 .portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link {
     display: flex;
+    flex-grow: 1;
     justify-content: flex-end;
+    align-items: flex-end;
     margin: 10px 0;
     padding: 0 15px;
 }
