@@ -73,8 +73,8 @@ document.querySelector(".about-me").addEventListener("click", function () {butto
 document.querySelector(".my-experience").addEventListener("click", function () {buttonClick(this)});
 document.querySelector(".my-portfolio").addEventListener("click", function () {buttonClick(this)});
 document.querySelector(".logo-href").addEventListener("click", function () {buttonClick(this)});
-const navTogglerBtn = document.querySelector(".nav-toggler"),
-    aside = document.querySelector(".aside");
+const navTogglerBtn = document.querySelector(".nav-toggler");
+const aside = document.querySelector(".aside");
 navTogglerBtn.addEventListener("click", () => {
     asideSectionTogglerBtn();
 })
