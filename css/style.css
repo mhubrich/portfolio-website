@@ -203,6 +203,19 @@ ul {
 
 .aside .logo img {
     height: 100px;
+    position: absolute;
+    left: -50px;
+    transition: all 0.3s ease;
+}
+
+.aside .logo .filled,
+.aside .logo:hover .outline {
+    opacity: 1;
+}
+
+.aside .logo .outline,
+.aside .logo:hover .filled {
+    opacity: 0;
 }
 
 .aside .nav-toggler {
