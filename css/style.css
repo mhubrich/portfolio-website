@@ -373,13 +373,14 @@ h3.my-profession {
 }
 
 .about .about-content .about-text p {
+    margin-bottom: 1rem;
     font-size: 16px;
     line-height: 25px;
     color: var(--text-black-700);
 }
 
 .about .about-item {
-    margin: 30px 0;
+    margin: 15px 0 30px;
     flex: 0 0 33.33%;
     max-width: 33.33%;
 }
@@ -391,8 +392,9 @@ h3.my-profession {
 }
 
 .about .about-item .about-item-img:hover {
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-    transform: scale(1.5);
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.33);
+    transform: scale(1.2);
+    border: none;
 }
 
 .about .about-item .about-item-img img {
