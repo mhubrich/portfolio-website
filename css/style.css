@@ -321,7 +321,7 @@ h3.hello {
 
 h3.hello span {
     font-family: 'Reenie Beanie', cursive;
-    font-size: 42px;
+    font-size: 45px;
     font-weight: 700;
     margin-left: 0.5rem;
     color: var(--skin-color);
