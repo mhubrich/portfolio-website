@@ -391,6 +391,7 @@ h3.my-profession {
     font-size: 16px;
     line-height: 25px;
     color: var(--text-black-700);
+    text-align: justify;
 }
 
 .about .about-item {
@@ -507,7 +508,8 @@ h3.my-profession {
 
 .experience .experience-content .timeline .timeline-item {
     position: relative;
-    padding: 0 10px 30px 37px;
+    padding-left: 37px;
+    padding-bottom: 30px;
 }
 
 .experience .experience-content .timeline .timeline-item:last-child {
@@ -561,7 +563,6 @@ h3.my-profession {
 .experience .experience-content .timeline li {
     line-height: 1.2;
     font-size: 16px;
-    text-align: justify;
     margin-bottom: 3px;
     color: var(--text-black-700);
 }
