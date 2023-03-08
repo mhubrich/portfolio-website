@@ -557,7 +557,7 @@ h3.my-profession {
 
 /* Portfolio */
 .portfolio .container {
-    padding-bottom: 0;
+    padding-bottom: 30px;
 }
 
 .portfolio .portfolio-item {
