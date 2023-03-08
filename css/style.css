@@ -348,7 +348,7 @@ h3.my-profession {
     position: relative;
     text-align: center;
     justify-self: center;
-    background: url(../images/profile.jpg);
+    background: url(../images/profile/profile.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
