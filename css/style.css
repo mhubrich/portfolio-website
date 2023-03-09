@@ -451,6 +451,9 @@ h3.my-profession {
 .experience .experience-content .expertise h3.title,
 .experience .experience-content .technology h3.title {
     margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-black-900);
 }
 
 .experience .experience-content .expertise .expertise-content,
@@ -490,6 +493,9 @@ h3.my-profession {
 .experience .experience-content .education h3.title,
 .experience .experience-content .work-experience h3.title {
     margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-black-900);
 }
 
 .experience .experience-content .timeline-box {
