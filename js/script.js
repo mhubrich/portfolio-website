@@ -92,15 +92,15 @@ const dayNight = document.querySelector(".day-night");
 dayNight.addEventListener("click", () => {
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
-    document.body.classList.toggle("dark");
+    document.documentElement.classList.toggle("dark");
 })
 window.addEventListener("DOMContentLoaded", () => {
     const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     if (dark) {
-        document.body.classList.add("dark");
+        document.documentElement.classList.add("dark");
         dayNight.querySelector("i").classList.add("fa-sun");
     } else {
-        document.body.classList.remove("dark");
+        document.documentElement.classList.remove("dark");
         dayNight.querySelector("i").classList.add("fa-moon");
     }
 })
