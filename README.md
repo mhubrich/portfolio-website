@@ -1,6 +1,6 @@
 # Responsive Portfolio Website
 
-[![Portfolio Website][product-screenshot]](http://markushubrich.me)
+[![Portfolio Website][product-screenshot]](https://markushubrich.me)
 
 A responsive and mobile-friendly personal portfolio website to showcase skills, experience and past projects.
 
@@ -19,7 +19,7 @@ To get a local copy simply clone this repository: `git clone https://github.com/
 
 ### Live Version
 
-Visit the live version at: [markushubrich.me](http://markushubrich.me)
+Visit the live version at: [markushubrich.me](https://markushubrich.me)
 
 ## Contributing
 
@@ -41,7 +41,7 @@ This project is licensed under the MIT License - see the `LICENSE` file for deta
 
 * 👨‍💻 [Markus Hubrich](https://github.com/mhubrich)
 * 📧 [info@markushubrich.me](mailto:info@markushubrich.me)
-* 🌐 [markushubrich.me](http://markushubrich.me)
+* 🌐 [markushubrich.me](https://markushubrich.me)
 * 🗒️ [linkedin.com/in/markus-hubrich](https://www.linkedin.com/in/markus-hubrich)
 
 
