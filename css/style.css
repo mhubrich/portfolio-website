@@ -16,22 +16,22 @@
     --line-height-normal: 1.3;
     --line-height-large: 1.5;
     /* Colors for light mode*/
-    --bg-black-900: #f2f2fc;
-    --bg-black-100: #fdf9ff;
-    --bg-black-50: #e8dfec;
-    --text-black-900: #302e4d;
-    --text-black-700: #504e70;
+    --bg-color-background: #f2f2fc;
+    --bg-color-float: #fdf9ff;
+    --bg-color-border: #e8dfec;
+    --text-color-title: #302e4d;
+    --text-color-paragraph: #504e70;
     /* Theme color */
-    --skin-color: #e53935;
+    --theme-color: #e53935;
 }
 
 :root.dark {
     /* Colors for dark mode */
-    --bg-black-900: #151515;
-    --bg-black-100: #222222;
-    --bg-black-50: #393939;
-    --text-black-900: #ffffff;
-    --text-black-700: #e9e9e9;
+    --bg-color-background: #151515;
+    --bg-color-float: #222222;
+    --bg-color-border: #393939;
+    --text-color-title: #ffffff;
+    --text-color-paragraph: #e9e9e9;
 }
 
 * {
@@ -48,7 +48,7 @@
 }
 
 .section {
-    background: var(--bg-black-900);
+    background: var(--bg-color-background);
     min-height: 100vh;
     display: block;
     padding: 0 30px;
@@ -111,7 +111,7 @@
 
 .section-title h2 {
     font-size: 2.5rem;
-    color: var(--text-black-900);
+    color: var(--text-color-title);
     font-weight: 700;
     position: relative;
 }
@@ -120,7 +120,7 @@
     content: '';
     height: 4px;
     width: 50px;
-    background-color: var(--skin-color);
+    background-color: var(--theme-color);
     position: absolute;
     top: 100%;
     left: 0;
@@ -130,7 +130,7 @@
     content: '';
     height: 4px;
     width: 25px;
-    background-color: var(--skin-color);
+    background-color: var(--theme-color);
     position: absolute;
     top: 100%;
     left: 0;
@@ -154,7 +154,7 @@
     display: inline-block;
     white-space: nowrap;
     border: none;
-    background: var(--skin-color);
+    background: var(--theme-color);
     transition: all 0.3s ease;
 }
 
@@ -176,9 +176,9 @@
     width: 2.5rem;
     line-height: 2.5rem;
     z-index: 101;
-    background: var(--bg-black-100);
-    color: var(--text-black-900);
-    border: 1px solid var(--bg-black-50);
+    background: var(--bg-color-float);
+    color: var(--text-color-title);
+    border: 1px solid var(--bg-color-border);
     border-radius: 50%;
     text-align: center;
     font-size: var(--font-size-large);
@@ -189,13 +189,13 @@
 /* Aside */
 .aside {
     width: 270px;
-    background: var(--bg-black-100);
+    background: var(--bg-color-float);
     position: fixed;
     left: 0;
     top: 0;
     padding: 30px;
     height: 100%;
-    border-right: 1px solid var(--bg-black-50);
+    border-right: 1px solid var(--bg-color-border);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -232,13 +232,13 @@
 .aside .nav-toggler {
     height: 40px;
     width: 45px;
-    border: 1px solid var(--bg-black-50);
+    border: 1px solid var(--bg-color-border);
     cursor: pointer;
     position: fixed;
     left: 300px;
     top: 20px;
     border-radius: 5px;
-    background: var(--bg-black-100);
+    background: var(--bg-color-float);
     display: none;
     align-items: center;
     justify-content: center;
@@ -248,7 +248,7 @@
 .aside .nav-toggler span {
     height: 2px;
     width: 18px;
-    background: var(--skin-color);
+    background: var(--theme-color);
     display: inline-block;
     position: relative;
 }
@@ -261,7 +261,7 @@
     content: '';
     height: 2px;
     width: 18px;
-    background: var(--skin-color);
+    background: var(--theme-color);
     position: absolute;
     top: -6px;
     left: 0;
@@ -276,7 +276,7 @@
     content: '';
     height: 2px;
     width: 18px;
-    background: var(--skin-color);
+    background: var(--theme-color);
     position: absolute;
     top: 6px;
     left: 0;
@@ -300,13 +300,13 @@
     font-size: var(--font-size-normal);
     font-weight: 600;
     display: block;
-    border-bottom: 1px solid var(--bg-black-50);
-    color: var(--text-black-900);
+    border-bottom: 1px solid var(--bg-color-border);
+    color: var(--text-color-title);
     padding: 5px 15px;
 }
 
 .aside .nav li a.active {
-    color: var(--skin-color);
+    color: var(--theme-color);
 }
 
 .aside .nav li a i {
@@ -317,7 +317,7 @@
 .home {
     min-height: 100vh;
     display: flex;
-    color: var(--text-black-900);
+    color: var(--text-color-title);
 }
 
 .home .home-info {
@@ -335,7 +335,7 @@ h3.hello span {
     font-size: 2.8rem;
     font-weight: 700;
     margin-left: 0.5rem;
-    color: var(--skin-color);
+    color: var(--theme-color);
 }
 
 h3.my-profession {
@@ -344,14 +344,14 @@ h3.my-profession {
 }
 
 .typing {
-    color: var(--skin-color);
+    color: var(--theme-color);
 }
 
 .home-info p {
     margin: 0 30px 30px 0;
     font-size: var(--font-size-large);
     line-height: var(--line-height-large);
-    color: var(--text-black-700);
+    color: var(--text-color-paragraph);
     text-align: justify;
 }
 
@@ -365,7 +365,7 @@ h3.my-profession {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    box-shadow: inset 0 0 0 9px var(--skin-color);
+    box-shadow: inset 0 0 0 9px var(--theme-color);
     animation: profile_animate 8s ease-in-out infinite;
 }
 
@@ -402,7 +402,7 @@ h3.my-profession {
     margin-bottom: 1rem;
     font-size: var(--font-size-normal);
     line-height: var(--line-height-large);
-    color: var(--text-black-700);
+    color: var(--text-color-paragraph);
     text-align: justify;
 }
 
@@ -413,7 +413,7 @@ h3.my-profession {
 }
 
 .about .about-item .about-item-img {
-    border: 1px solid var(--bg-black-50);
+    border: 1px solid var(--bg-color-border);
     border-radius: 10px;
     transition: all 0.3S ease;
 }
@@ -444,7 +444,7 @@ h3.my-profession {
 .experience .experience-content .experience-text p {
     font-size: var(--font-size-normal);
     line-height: var(--line-height-large);
-    color: var(--text-black-700);
+    color: var(--text-color-paragraph);
     text-align: justify;
     margin-bottom: 1rem;
 }
@@ -465,7 +465,7 @@ h3.my-profession {
     margin-bottom: 12px;
     font-size: var(--font-size-xlarge);
     font-weight: 700;
-    color: var(--text-black-900);
+    color: var(--text-color-title);
 }
 
 .experience .experience-content .expertise .expertise-content,
@@ -483,7 +483,7 @@ h3.my-profession {
     display: inline-block;
     white-space: nowrap;
     color: white;
-    background: var(--skin-color);
+    background: var(--theme-color);
 }
 
 .experience .experience-content .technology .technology-content img {
@@ -507,7 +507,7 @@ h3.my-profession {
     margin-bottom: 12px;
     font-size: var(--font-size-xlarge);
     font-weight: 700;
-    color: var(--text-black-900);
+    color: var(--text-color-title);
 }
 
 .experience .experience-content .timeline-box {
@@ -516,9 +516,9 @@ h3.my-profession {
 }
 
 .experience .experience-content .timeline {
-    background-color: var(--bg-black-100);
+    background-color: var(--bg-color-float);
     padding: 30px 15px;
-    border: 1px solid var(--bg-black-50);
+    border: 1px solid var(--bg-color-border);
     border-radius: 10px;
     width: 100%;
     position: relative;
@@ -541,7 +541,7 @@ h3.my-profession {
     height: 100%;
     left: 7px;
     top: 0;
-    background-color: var(--skin-color);
+    background-color: var(--theme-color);
 }
 
 .experience .experience-content .timeline .circle-dot {
@@ -551,14 +551,14 @@ h3.my-profession {
     height: 15px;
     width: 15px;
     border-radius: 50%;
-    background-color: var(--skin-color);
+    background-color: var(--theme-color);
 }
 
 .experience .experience-content .timeline .timeline-date {
     font-weight: 400;
     font-size: var(--font-size-small);
     margin-bottom: 5px;
-    color: var(--text-black-700);
+    color: var(--text-color-paragraph);
 }
 
 .experience .experience-content .timeline .timeline-date .fa {
@@ -568,21 +568,21 @@ h3.my-profession {
 .experience .experience-content .timeline .timeline-title {
     font-weight: 700;
     font-size: var(--font-size-medium);
-    color: var(--text-black-900);
+    color: var(--text-color-title);
 }
 
 .experience .experience-content .timeline .timeline-location {
     font-weight: 500;
     font-size: var(--font-size-small);
     margin-bottom: 10px;
-    color: var(--text-black-900);
+    color: var(--text-color-title);
 }
 
 .experience .experience-content .timeline li {
     line-height: var(--line-height-small);
     font-size: var(--font-size-normal);
     margin-bottom: 3px;
-    color: var(--text-black-700);
+    color: var(--text-color-paragraph);
 }
 
 .experience .experience-content .timeline li:last-child {
@@ -612,8 +612,8 @@ h3.my-profession {
 .portfolio .portfolio-item .portfolio-item-inner {
     display: flex;
     flex-direction: column;
-    background-color: var(--bg-black-100);
-    border: 1px solid var(--bg-black-50);
+    background-color: var(--bg-color-float);
+    border: 1px solid var(--bg-color-border);
     border-radius: 10px;
     text-align: center;
     transition: all 0.3S ease;
@@ -629,14 +629,14 @@ h3.my-profession {
     padding: 0 15px;
     font-size: var(--font-size-medium);
     font-weight: 700;
-    color: var(--text-black-900);
+    color: var(--text-color-title);
 }
 
 .portfolio .portfolio-item .portfolio-item-inner p {
     padding: 0 15px;
     line-height: var(--line-height-normal);
     font-size: var(--font-size-normal);
-    color: var(--text-black-700);
+    color: var(--text-color-paragraph);
 }
 
 .portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link {
@@ -651,11 +651,11 @@ h3.my-profession {
 .portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link a {
     font-size: var(--font-size-small);
     font-weight: 500;
-    color: var(--text-black-700);
+    color: var(--text-color-paragraph);
 }
 
 .portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link a:hover {
-    color: var(--skin-color);
+    color: var(--theme-color);
 }
 
 .portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link i {
@@ -674,14 +674,14 @@ h3.my-profession {
 
 /* Contact */
 .contact-title {
-    color: var(--skin-color);
+    color: var(--theme-color);
     text-align: center;
     font-size: var(--font-size-xlarge);
     margin-bottom: 20px;
 }
 
 .contact-sub-title {
-    color: var(--text-black-900);
+    color: var(--text-color-title);
     text-align: center;
     font-size: var(--font-size-normal);
     margin-bottom: 80px;
@@ -700,7 +700,7 @@ h3.my-profession {
 
 .contact .contact-info-item a .icon {
     font-size: 2.2rem;
-    color: var(--skin-color);
+    color: var(--theme-color);
     transition: all 0.3s ease;
 }
 
@@ -711,13 +711,13 @@ h3.my-profession {
 .contact .contact-info-item a h4 {
     font-size: var(--font-size-medium);
     font-weight: 700;
-    color: var(--text-black-900);
+    color: var(--text-color-title);
     margin: 15px 0 5px;
     transition: all 0.2s ease;
 }
 
 .contact .contact-info-item a:hover h4 {
-    color: var(--skin-color);
+    color: var(--theme-color);
 }
 
 /* Media queries for shrinking window sizes */
