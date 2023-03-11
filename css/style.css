@@ -47,6 +47,71 @@
     box-sizing: border-box;
 }
 
+h1 {
+    font-size: 1.75rem;
+    color: var(--text-color-title);
+    margin: 15px 0;
+}
+
+h2 {
+    font-size: 1.875rem;
+    color: var(--text-color-title);
+    margin: 15px 0;
+}
+
+h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color-title);
+    position: relative;
+}
+
+h3::before {
+    content: '';
+    height: 4px;
+    width: 50px;
+    background-color: var(--theme-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+h3::after {
+    content: '';
+    height: 4px;
+    width: 25px;
+    background-color: var(--theme-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+}
+
+h4 {
+    margin-bottom: 12px;
+    font-size: var(--font-size-xlarge);
+    font-weight: 700;
+    color: var(--text-color-title);
+}
+
+h5 {
+    font-size: var(--font-size-medium);
+    font-weight: 700;
+    color: var(--text-color-title);
+    margin: 10px 0 5px;
+}
+
+h6 {
+    font-size: var(--font-size-small);
+    font-weight: 500;
+    color: var(--text-color-title);
+    margin-bottom: 10px;
+}
+
+a {
+    color: var(--text-color-title);
+}
+
 .section {
     background: var(--bg-color-background);
     min-height: 100vh;
@@ -107,34 +172,6 @@
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 60px;
-}
-
-.section-title h2 {
-    font-size: 2.5rem;
-    color: var(--text-color-title);
-    font-weight: 700;
-    position: relative;
-}
-
-.section-title h2::before {
-    content: '';
-    height: 4px;
-    width: 50px;
-    background-color: var(--theme-color);
-    position: absolute;
-    top: 100%;
-    left: 0;
-}
-
-.section-title h2::after {
-    content: '';
-    height: 4px;
-    width: 25px;
-    background-color: var(--theme-color);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    margin-top: 8px;
 }
 
 .row {
@@ -325,22 +362,12 @@
     max-width: 70%;
 }
 
-h3.hello {
-    font-size: 1.75rem;
-    margin: 15px 0;
-}
-
-h3.hello span {
+.name {
     font-family: 'Reenie Beanie', cursive;
     font-size: 2.8rem;
     font-weight: 700;
     margin-left: 0.5rem;
     color: var(--theme-color);
-}
-
-h3.my-profession {
-    font-size: 1.875rem;
-    margin: 15px 0;
 }
 
 .typing {
@@ -460,14 +487,6 @@ h3.my-profession {
     margin-top: 30px;
 }
 
-.experience .experience-content .expertise h3.title,
-.experience .experience-content .technology h3.title {
-    margin-bottom: 12px;
-    font-size: var(--font-size-xlarge);
-    font-weight: 700;
-    color: var(--text-color-title);
-}
-
 .experience .experience-content .expertise .expertise-content,
 .experience .experience-content .technology .technology-content {
     flex: 0 0 100%;
@@ -500,14 +519,6 @@ h3.my-profession {
     flex: 0 0 35%;
     max-width: 35%;
     margin-top: 30px;
-}
-
-.experience .experience-content .education h3.title,
-.experience .experience-content .work-experience h3.title {
-    margin-bottom: 12px;
-    font-size: var(--font-size-xlarge);
-    font-weight: 700;
-    color: var(--text-color-title);
 }
 
 .experience .experience-content .timeline-box {
@@ -555,27 +566,13 @@ h3.my-profession {
 }
 
 .experience .experience-content .timeline .timeline-date {
-    font-weight: 400;
     font-size: var(--font-size-small);
-    margin-bottom: 5px;
+    font-weight: 400;
     color: var(--text-color-paragraph);
 }
 
 .experience .experience-content .timeline .timeline-date .fa {
     margin-right: 10px;
-}
-
-.experience .experience-content .timeline .timeline-title {
-    font-weight: 700;
-    font-size: var(--font-size-medium);
-    color: var(--text-color-title);
-}
-
-.experience .experience-content .timeline .timeline-location {
-    font-weight: 500;
-    font-size: var(--font-size-small);
-    margin-bottom: 10px;
-    color: var(--text-color-title);
 }
 
 .experience .experience-content .timeline li {
@@ -624,14 +621,6 @@ h3.my-profession {
     transform: scale(1.02);
 }
 
-.portfolio .portfolio-item .portfolio-item-inner h4 {
-    margin: 10px 0 5px;
-    padding: 0 15px;
-    font-size: var(--font-size-medium);
-    font-weight: 700;
-    color: var(--text-color-title);
-}
-
 .portfolio .portfolio-item .portfolio-item-inner p {
     padding: 0 15px;
     line-height: var(--line-height-normal);
@@ -644,14 +633,8 @@ h3.my-profession {
     flex-grow: 1;
     justify-content: flex-end;
     align-items: flex-end;
-    margin: 10px 0;
+    margin-top: 10px;
     padding: 0 15px;
-}
-
-.portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link a {
-    font-size: var(--font-size-small);
-    font-weight: 500;
-    color: var(--text-color-paragraph);
 }
 
 .portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link a:hover {
@@ -674,24 +657,20 @@ h3.my-profession {
 
 /* Contact */
 .contact-title {
-    color: var(--theme-color);
     text-align: center;
-    font-size: var(--font-size-xlarge);
-    margin-bottom: 20px;
+    color: var(--theme-color);
 }
 
 .contact-sub-title {
-    color: var(--text-color-title);
     text-align: center;
-    font-size: var(--font-size-normal);
     margin-bottom: 80px;
 }
 
 .contact .contact-info-item {
     flex: 0 0 25%;
     max-width: 25%;
-    text-align: center;
     margin-bottom: 60px;
+    text-align: center;
 }
 
 .contact .contact-info-item a {
@@ -708,15 +687,11 @@ h3.my-profession {
     transform: scale(1.15);
 }
 
-.contact .contact-info-item a h4 {
-    font-size: var(--font-size-medium);
-    font-weight: 700;
-    color: var(--text-color-title);
-    margin: 15px 0 5px;
+.contact .contact-info-item a h5 {
     transition: all 0.2s ease;
 }
 
-.contact .contact-info-item a:hover h4 {
+.contact .contact-info-item a:hover h5 {
     color: var(--theme-color);
 }
 
