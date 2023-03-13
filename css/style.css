@@ -164,7 +164,7 @@ a {
 }
 
 .section .container {
-    padding-top: 60px;
+    padding-top: 32px;
     padding-bottom: 70px;
 }
 
@@ -207,7 +207,7 @@ a {
 .day-night {
     position: fixed;
     right: 0;
-    top: 25px;
+    top: 32px;
     margin-right: 25px;
     height: 2.5rem;
     width: 2.5rem;
@@ -242,7 +242,7 @@ a {
 
 .aside .logo {
     position: absolute;
-    top: 50px;
+    top: 32px;
 }
 
 .aside .logo img {
@@ -290,7 +290,7 @@ a {
     cursor: pointer;
     position: fixed;
     left: 300px;
-    top: 20px;
+    top: 24px;
     border-radius: 5px;
     background: var(--bg-color-float);
     display: none;
@@ -402,10 +402,6 @@ a {
 }
 
 /* About */
-.about .container {
-    padding-bottom: 30px;
-}
-
 .about .about-content {
     flex: 0 0 100%;
     max-width: 100%;
@@ -586,10 +582,6 @@ a {
 }
 
 /* Portfolio */
-.portfolio .container {
-    padding-bottom: 30px;
-}
-
 .portfolio .portfolio-item {
     display: flex;
     flex: 0 0 33.33%;
@@ -689,7 +681,15 @@ a {
 /* Media queries for shrinking window sizes */
 @media (max-width:1199px) {
     .section .container {
-        padding-top: 70px;
+        padding-top: 64px;
+    }
+
+    .day-night {
+        top: 24px;
+    }
+
+    .aside .logo {
+        top: 24px;
     }
 
     .aside {
@@ -747,4 +747,8 @@ a {
         flex: 0 0 100%;
         max-width: 100%;
     }
+}
+
+* {
+    outline: 1px red solid;
 }
