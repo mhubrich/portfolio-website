@@ -248,7 +248,7 @@ a {
 .aside .logo img {
     height: 100px;
     position: absolute;
-    left: -50px;
+    transform: translateX(-50%);
     transition: all 0.3s ease;
 }
 
@@ -264,6 +264,23 @@ a {
 
 .aside ul {
     list-style: none;
+}
+
+.aside .nav li a {
+    font-size: var(--font-size-normal);
+    font-weight: 600;
+    display: block;
+    border-bottom: 1px solid var(--bg-color-border);
+    color: var(--text-color-title);
+    padding: 15px 15px;
+}
+
+.aside .nav li a.active {
+    color: var(--theme-color);
+}
+
+.aside .nav li a i {
+    margin-right: 15px;
 }
 
 .aside .nav-toggler {
@@ -322,32 +339,6 @@ a {
 .aside .nav-toggler.open span::after {
     transform: rotate(-45deg);
     top: 0;
-}
-
-.aside .nav {
-    margin-top: 50px;
-}
-
-.aside .nav li {
-    margin-bottom: 20px;
-    display: block;
-}
-
-.aside .nav li a {
-    font-size: var(--font-size-normal);
-    font-weight: 600;
-    display: block;
-    border-bottom: 1px solid var(--bg-color-border);
-    color: var(--text-color-title);
-    padding: 5px 15px;
-}
-
-.aside .nav li a.active {
-    color: var(--theme-color);
-}
-
-.aside .nav li a i {
-    margin-right: 15px;
 }
 
 /* Home */
