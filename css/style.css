@@ -761,4 +761,13 @@ a {
     .contact .contact-info-item {
         margin-bottom: 2rem;
     }
+
+    h1,
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .name {
+        font-size: 2.5rem;
+    }
 }

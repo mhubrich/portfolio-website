@@ -1,18 +1,11 @@
-/* Typing animation in home section */
-var typed = new Typed(".typing", {
-    strings: ["Product Manager.", "Software Developer.", "Data Analyst.", "Mentor.", "Athlete.", "Friend."],
-    typeSpeed: 30,
-    backSpeed: 10,
-    backDelay: 1000,
-    loop: true
-})
-
-/* Navigation */
+/* Navigation functions */
 const nav = document.querySelector(".nav"),
     navList = nav.querySelectorAll("li"),
     totalNavList = navList.length,
     allSection = document.querySelectorAll(".section"),
-    totalSection = allSection.length;
+    totalSection = allSection.length,
+    navTogglerBtn = document.querySelector(".nav-toggler");
+
 for (let i = 0; i < totalNavList; i++) {
     const a = navList[i].querySelector("a");
     a.addEventListener("click", function () {
@@ -30,14 +23,17 @@ for (let i = 0; i < totalNavList; i++) {
         }
     })
 }
+
 function removeBackSection() {
     for (let i = 0; i < totalSection; i++) {
         allSection[i].classList.remove("back-section");
     }
 }
+
 function addBackSection(num) {
     allSection[num].classList.add("back-section");
 }
+
 function showSection(element) {
     for (let i = 0; i < totalSection; i++) {
         allSection[i].classList.remove("active");
@@ -45,6 +41,7 @@ function showSection(element) {
     const target = element.getAttribute("href").split("#")[1];
     document.querySelector("#" + target).classList.add("active")
 }
+
 function updateNav(element) {
     for (let i = 0; i < totalNavList; i++) {
         navList[i].querySelector("a").classList.remove("active");
@@ -54,6 +51,7 @@ function updateNav(element) {
         }
     }
 }
+
 function getActive() {
     for (let i = 0; i < totalNavList; i++) {
         if (navList[i].querySelector("a").classList.contains("active")) {
@@ -62,6 +60,15 @@ function getActive() {
     }
     return 0;
 }
+
+function asideSectionTogglerBtn() {
+    document.querySelector(".aside").classList.toggle("open");
+    navTogglerBtn.classList.toggle("open");
+    for (let i = 0; i < totalSection; i++) {
+        allSection[i].classList.toggle("open");
+    }
+}
+
 function buttonClick(reference) {
     const sectionIndex = getActive();
     showSection(reference);
@@ -69,38 +76,12 @@ function buttonClick(reference) {
     removeBackSection();
     addBackSection(sectionIndex);
 }
+
+
+/* Initialize navigation */
+navTogglerBtn.addEventListener("click", () => asideSectionTogglerBtn());
 document.querySelector(".about-me").addEventListener("click", function () {buttonClick(this)});
 document.querySelector(".my-experience").addEventListener("click", function () {buttonClick(this)});
 document.querySelector(".my-portfolio").addEventListener("click", function () {buttonClick(this)});
 document.querySelector(".contact-me").addEventListener("click", function () {buttonClick(this)});
 document.querySelector(".logo-href").addEventListener("click", function () {buttonClick(this)});
-const navTogglerBtn = document.querySelector(".nav-toggler");
-const aside = document.querySelector(".aside");
-navTogglerBtn.addEventListener("click", () => {
-    asideSectionTogglerBtn();
-})
-function asideSectionTogglerBtn() {
-    aside.classList.toggle("open");
-    navTogglerBtn.classList.toggle("open");
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.toggle("open");
-    }
-}
-
-/* Dark/Light Mode */
-const dayNight = document.querySelector(".day-night");
-dayNight.addEventListener("click", () => {
-    dayNight.querySelector("i").classList.toggle("fa-sun");
-    dayNight.querySelector("i").classList.toggle("fa-moon");
-    document.documentElement.classList.toggle("dark");
-})
-window.addEventListener("DOMContentLoaded", () => {
-    const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (dark) {
-        document.documentElement.classList.add("dark");
-        dayNight.querySelector("i").classList.add("fa-sun");
-    } else {
-        document.documentElement.classList.remove("dark");
-        dayNight.querySelector("i").classList.add("fa-moon");
-    }
-})
