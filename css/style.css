@@ -50,13 +50,12 @@
 h1 {
     font-size: 1.75rem;
     color: var(--text-color-title);
-    margin: 15px 0;
 }
 
 h2 {
     font-size: 1.875rem;
     color: var(--text-color-title);
-    margin: 15px 0;
+    margin: 1rem 0;
 }
 
 h3 {
@@ -68,8 +67,8 @@ h3 {
 
 h3::before {
     content: '';
-    height: 4px;
-    width: 50px;
+    height: 0.25rem;
+    width: 3rem;
     background-color: var(--theme-color);
     position: absolute;
     top: 100%;
@@ -78,17 +77,17 @@ h3::before {
 
 h3::after {
     content: '';
-    height: 4px;
-    width: 25px;
+    height: 0.25rem;
+    width: 1.5rem;
     background-color: var(--theme-color);
     position: absolute;
     top: 100%;
     left: 0;
-    margin-top: 8px;
+    margin-top: 0.5rem;
 }
 
 h4 {
-    margin-bottom: 12px;
+    margin-bottom: 0.5rem;
     font-size: var(--font-size-xlarge);
     font-weight: 700;
     color: var(--text-color-title);
@@ -98,14 +97,14 @@ h5 {
     font-size: var(--font-size-medium);
     font-weight: 700;
     color: var(--text-color-title);
-    margin: 10px 0 5px;
+    margin: 0.5rem 0 0.25rem;
 }
 
 h6 {
     font-size: var(--font-size-small);
     font-weight: 500;
     color: var(--text-color-title);
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
 }
 
 a {
@@ -116,10 +115,10 @@ a {
     background: var(--bg-color-background);
     min-height: 100vh;
     display: block;
-    padding: 0 30px;
+    padding: 0 2rem;
     opacity: 1;
     position: fixed;
-    left: 270px;
+    left: 17rem;
     top: 0;
     right: 0;
     bottom: 0;
@@ -153,41 +152,41 @@ a {
 }
 
 .padd-15 {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 69rem;
     width: 100%;
     margin: auto;
 }
 
 .section .container {
-    padding-top: 32px;
-    padding-bottom: 70px;
+    padding-top: 2rem;
+    padding-bottom: 4.5rem;
 }
 
 .section-title {
     flex: 0 0 100%;
     max-width: 100%;
-    margin-bottom: 60px;
+    margin-bottom: 3rem;
 }
 
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px;
+    margin-left: -1rem;
+    margin-right: -1rem;
     position: relative;
 }
 
 .btn {
     font-size: var(--font-size-normal);
     font-weight: 500;
-    padding: 12px 30px;
+    padding: 1rem 2rem;
     color: white;
-    border-radius: 40px;
+    border-radius: 2.5rem;
     display: inline-block;
     white-space: nowrap;
     border: none;
@@ -199,20 +198,16 @@ a {
     transform: scale(1.05);
 }
 
-.shadow-dark {
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-}
-
 /* Dark/Light Mode */
 .day-night {
     position: fixed;
     right: 0;
-    top: 32px;
-    margin-right: 25px;
+    top: 2rem;
+    margin-right: 1.5rem;
     height: 2.5rem;
     width: 2.5rem;
     line-height: 2.5rem;
-    z-index: 101;
+    z-index: 10;
     background: var(--bg-color-float);
     color: var(--text-color-title);
     border: 1px solid var(--bg-color-border);
@@ -223,30 +218,34 @@ a {
     transition: all 0.3s ease;
 }
 
+.day-night:hover {
+    transform: scale(1.1);
+}
+
 /* Aside */
 .aside {
-    width: 270px;
+    width: 17rem;
     background: var(--bg-color-float);
     position: fixed;
     left: 0;
     top: 0;
-    padding: 30px;
+    padding: 1rem;
     height: 100%;
     border-right: 1px solid var(--bg-color-border);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 20;
     transition: all 0.3s ease;
 }
 
 .aside .logo {
     position: absolute;
-    top: 32px;
+    top: 2rem;
 }
 
 .aside .logo img {
-    height: 100px;
+    height: 6.5rem;
     position: absolute;
     transform: translateX(-50%);
     transition: all 0.3s ease;
@@ -272,7 +271,7 @@ a {
     display: block;
     border-bottom: 1px solid var(--bg-color-border);
     color: var(--text-color-title);
-    padding: 15px 15px;
+    padding: 1rem 1rem;
 }
 
 .aside .nav li a.active {
@@ -280,18 +279,17 @@ a {
 }
 
 .aside .nav li a i {
-    margin-right: 15px;
+    margin-right: 1rem;
 }
 
 .aside .nav-toggler {
-    height: 40px;
-    width: 45px;
+    height: 2.5rem;
+    width: 2.75rem;
     border: 1px solid var(--bg-color-border);
     cursor: pointer;
     position: fixed;
-    left: 300px;
-    top: 24px;
-    border-radius: 5px;
+    top: 1.5rem;
+    border-radius: 0.5rem;
     background: var(--bg-color-float);
     display: none;
     align-items: center;
@@ -300,8 +298,8 @@ a {
 }
 
 .aside .nav-toggler span {
-    height: 2px;
-    width: 18px;
+    height: 0.125rem;
+    width: 1.25rem;
     background: var(--theme-color);
     display: inline-block;
     position: relative;
@@ -313,11 +311,11 @@ a {
 
 .aside .nav-toggler span::before {
     content: '';
-    height: 2px;
-    width: 18px;
+    height: 0.125rem;
+    width: 1.25rem;
     background: var(--theme-color);
     position: absolute;
-    top: -6px;
+    top: -0.4rem;
     left: 0;
 }
 
@@ -328,11 +326,11 @@ a {
 
 .aside .nav-toggler span::after {
     content: '';
-    height: 2px;
-    width: 18px;
+    height: 0.125rem;
+    width: 1.25rem;
     background: var(--theme-color);
     position: absolute;
-    top: 6px;
+    top: 0.4rem;
     left: 0;
 }
 
@@ -353,6 +351,10 @@ a {
     max-width: 70%;
 }
 
+.home .home-info .hello span {
+    display: inline-block;
+}
+
 .name {
     font-family: 'Reenie Beanie', cursive;
     font-size: 2.8rem;
@@ -366,7 +368,7 @@ a {
 }
 
 .home-info p {
-    margin: 0 30px 30px 0;
+    margin: 0 1rem 1rem 0;
     font-size: var(--font-size-large);
     line-height: var(--line-height-large);
     color: var(--text-color-paragraph);
@@ -383,7 +385,7 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    box-shadow: inset 0 0 0 9px var(--theme-color);
+    box-shadow: inset 0 0 0 0.5rem var(--theme-color);
     animation: profile_animate 8s ease-in-out infinite;
 }
 
@@ -413,27 +415,27 @@ a {
 }
 
 .about .about-content .about-text p {
-    margin-bottom: 1rem;
     font-size: var(--font-size-normal);
     line-height: var(--line-height-large);
     color: var(--text-color-paragraph);
     text-align: justify;
+    margin-bottom: 1rem;
 }
 
 .about .about-item {
-    margin: 15px 0 30px;
     flex: 0 0 33.33%;
     max-width: 33.33%;
+    margin: 1rem 0 2rem;
 }
 
 .about .about-item .about-item-img {
     border: 1px solid var(--bg-color-border);
-    border-radius: 10px;
+    border-radius: 0.75rem;
     transition: all 0.3S ease;
 }
 
 .about .about-item .about-item-img:hover {
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.33);
+    box-shadow: 0 0 1.5rem rgba(48, 46, 77, 0.33);
     transform: scale(1.2);
     border: none;
 }
@@ -441,7 +443,7 @@ a {
 .about .about-item .about-item-img img {
     width: 100%;
     display: block;
-    border-radius: 10px;
+    border-radius: 0.75rem;
 }
 
 /* Experience */
@@ -471,7 +473,7 @@ a {
 .experience .experience-content .technology {
     flex: 0 0 50%;
     max-width: 50%;
-    margin-top: 30px;
+    margin-top: 2rem;
 }
 
 .experience .experience-content .expertise .expertise-content,
@@ -482,9 +484,9 @@ a {
 
 .experience .experience-content .expertise .expertise-item {
     font-size: var(--font-size-small);
-    padding: 6px 8px;
-    margin-bottom: 8px;
-    border-radius: 16px;
+    padding: 0.4rem 0.5rem;
+    margin-bottom: 0.35rem;
+    border-radius: 0.75rem;
     border: none;
     display: inline-block;
     white-space: nowrap;
@@ -493,19 +495,19 @@ a {
 }
 
 .experience .experience-content .technology .technology-content img {
-    height: 33px; /* =6+6+14*1.5 (pad-top + pad-bottom + font-size * line-height) */
+    height: 1.9375rem; /* =0.4+0.4+0.875*1.3 (pad-top + pad-bottom + font-size * line-height) */
 }
 
 .experience .experience-content .work-experience {
     flex: 0 0 65%;
     max-width: 65%;
-    margin-top: 30px;
+    margin-top: 2rem;
 }
 
 .experience .experience-content .education {
     flex: 0 0 35%;
     max-width: 35%;
-    margin-top: 30px;
+    margin-top: 2rem;
 }
 
 .experience .experience-content .timeline-box {
@@ -515,17 +517,18 @@ a {
 
 .experience .experience-content .timeline {
     background-color: var(--bg-color-float);
-    padding: 30px 15px;
+    padding: 2rem 1rem;
     border: 1px solid var(--bg-color-border);
-    border-radius: 10px;
+    border-radius: 0.75rem;
     width: 100%;
     position: relative;
+    box-shadow: 0 0 1.5rem rgba(48, 46, 77, 0.15);
 }
 
 .experience .experience-content .timeline .timeline-item {
     position: relative;
-    padding-left: 37px;
-    padding-bottom: 30px;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
 }
 
 .experience .experience-content .timeline .timeline-item:last-child {
@@ -537,7 +540,7 @@ a {
     width: 1px;
     position: absolute;
     height: 100%;
-    left: 7px;
+    left: 0.5rem;
     top: 0;
     background-color: var(--theme-color);
 }
@@ -546,8 +549,8 @@ a {
     position: absolute;
     left: 0;
     top: 0;
-    height: 15px;
-    width: 15px;
+    height: 1rem;
+    width: 1rem;
     border-radius: 50%;
     background-color: var(--theme-color);
 }
@@ -559,14 +562,14 @@ a {
 }
 
 .experience .experience-content .timeline .timeline-date .fa {
-    margin-right: 10px;
+    margin-right: 0.5rem;
 }
 
 .experience .experience-content .timeline li {
-    line-height: var(--line-height-small);
     font-size: var(--font-size-normal);
-    margin-bottom: 3px;
     color: var(--text-color-paragraph);
+    line-height: var(--line-height-small);
+    margin-bottom: 0.2rem;
 }
 
 .experience .experience-content .timeline li:last-child {
@@ -574,11 +577,11 @@ a {
 }
 
 .experience .experience-content .timeline .fa-ul {
-    margin: 0 0 0 20px;
+    margin-left: 1.25rem;
 }
 
 .experience .experience-content .my-portfolio {
-    margin-top: 30px;
+    margin-top: 2rem;
 }
 
 /* Portfolio */
@@ -586,7 +589,7 @@ a {
     display: flex;
     flex: 0 0 33.33%;
     max-width: 33.33%;
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
 }
 
 .portfolio .portfolio-item .portfolio-item-inner {
@@ -594,18 +597,18 @@ a {
     flex-direction: column;
     background-color: var(--bg-color-float);
     border: 1px solid var(--bg-color-border);
-    border-radius: 10px;
+    border-radius: 0.75rem;
     text-align: center;
     transition: all 0.3S ease;
 }
 
 .portfolio .portfolio-item .portfolio-item-inner:hover {
-    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+    box-shadow: 0 0 1.5rem rgba(48, 46, 77, 0.15);
     transform: scale(1.02);
 }
 
 .portfolio .portfolio-item .portfolio-item-inner p {
-    padding: 0 15px;
+    padding: 0 1rem;
     line-height: var(--line-height-normal);
     font-size: var(--font-size-normal);
     color: var(--text-color-paragraph);
@@ -616,8 +619,8 @@ a {
     flex-grow: 1;
     justify-content: flex-end;
     align-items: flex-end;
-    margin-top: 10px;
-    padding: 0 15px;
+    margin-top: 0.5rem;
+    padding: 0 1rem;
 }
 
 .portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link a:hover {
@@ -629,30 +632,31 @@ a {
 }
 
 .portfolio .portfolio-item .portfolio-item-inner .portfolio-item-link a:hover i {
-    transform: translateX(5px);
+    transform: translateX(0.35rem);
 }
 
 .portfolio .portfolio-item .portfolio-item-inner .portfolio-item-img img {
     width: 100%;
     display: block;
-    border-radius: 10px 10px 0 0;
+    border-radius: 0.75rem 0.75rem 0 0;
 }
 
 /* Contact */
 .contact-title {
     text-align: center;
     color: var(--theme-color);
+    margin-bottom: 3rem;
 }
 
 .contact-sub-title {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 5rem;
 }
 
 .contact .contact-info-item {
     flex: 0 0 25%;
     max-width: 25%;
-    margin-bottom: 60px;
+    margin-bottom: 4rem;
     text-align: center;
 }
 
@@ -681,19 +685,19 @@ a {
 /* Media queries for shrinking window sizes */
 @media (max-width:1199px) {
     .section .container {
-        padding-top: 64px;
+        padding-top: 4rem;
     }
 
     .day-night {
-        top: 24px;
+        top: 1.5rem;
     }
 
     .aside .logo {
-        top: 24px;
+        top: 1.5rem;
     }
 
     .aside {
-        left: -270px;
+        left: -17rem;
     }
 
     .aside.open {
@@ -702,11 +706,11 @@ a {
 
     .aside .nav-toggler {
         display: flex;
-        left: 30px;
+        left: 2rem;
     }
 
     .aside .nav-toggler.open {
-        left: 300px;
+        left: 19rem;
     }
 
     .section {
@@ -714,7 +718,7 @@ a {
     }
 
     .section.open {
-        left: 270px;
+        left: 17rem;
     }
 }
 
@@ -729,6 +733,10 @@ a {
     .home .home-info {
         flex: 0 0 100%;
         max-width: 100%;
+    }
+
+    .home-info p {
+        margin-right: 0;
     }
 
     .home .home-img {
@@ -747,8 +755,10 @@ a {
         flex: 0 0 100%;
         max-width: 100%;
     }
-}
 
-* {
-    outline: 1px red solid;
+    .contact-title,
+    .contact-sub-title,
+    .contact .contact-info-item {
+        margin-bottom: 2rem;
+    }
 }
