@@ -77,6 +77,17 @@ function buttonClick(reference) {
     addBackSection(sectionIndex);
 }
 
+function tabClick(reference) {
+    for (let title of document.querySelectorAll(".resume-title")) {
+        title.classList.remove("active");
+    }
+    reference.querySelector(".resume-title").classList.add("active");
+
+    for (let item of document.querySelectorAll(".resume-item")) {
+        item.classList.remove("active");
+    }
+    document.getElementById(reference.className).classList.add("active");
+}
 
 /* Initialize navigation */
 navTogglerBtn.addEventListener("click", () => asideSectionTogglerBtn());
@@ -85,3 +96,6 @@ document.querySelector(".my-experience").addEventListener("click", function () {
 document.querySelector(".my-portfolio").addEventListener("click", function () {buttonClick(this)});
 document.querySelector(".contact-me").addEventListener("click", function () {buttonClick(this)});
 document.querySelector(".logo-href").addEventListener("click", function () {buttonClick(this)});
+document.querySelector(".resume-tabs .work-experience").addEventListener("click", function () {tabClick(this)});
+document.querySelector(".resume-tabs .education").addEventListener("click", function () {tabClick(this)});
+document.querySelector(".resume-tabs .volunteering").addEventListener("click", function () {tabClick(this)});
