@@ -497,15 +497,13 @@ a {
 
 .experience .experience-content .resume {
     flex: 0 0 100%;
-    max-width: 100%;
-    margin-top: 2rem;
+    max-width: max(0.8 * var(--container-width), 80%);
+    margin: 2rem auto 0;
 }
 
 .experience .experience-content .resume .resume-tabs {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
     margin-bottom: 0.5rem;
 }
 
@@ -520,11 +518,6 @@ a {
 .experience .experience-content .resume .resume-tabs .resume-title:hover {
     opacity: 100%;
 }
-
-.experience .experience-content .resume .resume-content {
-    max-width: max(0.8 * var(--container-width), 80%);
-    margin: 0 auto;
- }
 
  .experience .experience-content .resume .resume-content .resume-item {
     display: none;
