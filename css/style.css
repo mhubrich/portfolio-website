@@ -510,13 +510,15 @@ a {
 .experience .experience-content .resume .resume-tabs .resume-title {
     opacity: 50%;
     cursor: pointer;
-    margin: 0 0.5rem;
+    margin-bottom: 0;
+    margin-right: 1rem;
     transition: all 0.3S ease;
 }
 
 .experience .experience-content .resume .resume-tabs .active,
 .experience .experience-content .resume .resume-tabs .resume-title:hover {
     opacity: 100%;
+    text-decoration: underline 0.25rem;
 }
 
  .experience .experience-content .resume .resume-content .resume-item {
@@ -784,6 +786,10 @@ a {
         margin-bottom: 2rem;
     }
 
+    h1 {
+        text-align: center;
+    }
+
     h1,
     h2 {
         font-size: 1.5rem;
@@ -795,5 +801,16 @@ a {
 
     .experience .experience-content .resume .resume-tabs {
         flex-direction: column;
+    }
+
+    .experience .experience-content .resume .resume-tabs .active,
+    .experience .experience-content .resume .resume-tabs .resume-title:hover {
+        text-decoration: none;
+    }
+
+    .experience .experience-content .resume .resume-tabs .resume-title {
+        margin-right: 0;
+        padding-left: 0.5rem;
+        border-left: 0.25rem solid;
     }
 }
