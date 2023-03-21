@@ -1,101 +1,199 @@
-/* Navigation functions */
-const nav = document.querySelector(".nav"),
-    navList = nav.querySelectorAll("li"),
-    totalNavList = navList.length,
-    allSection = document.querySelectorAll(".section"),
-    totalSection = allSection.length,
-    navTogglerBtn = document.querySelector(".nav-toggler");
+/**
+ * This class handles all in-app navigation performed by user click events.
+ *
+ * The class is capable of managing navigation for:
+ * 1) Left-side menu
+ * 2) Buttons
+ * 3) Resume tabs
+ */
+class Navigation {
 
-for (let i = 0; i < totalNavList; i++) {
-    const a = navList[i].querySelector("a");
-    a.addEventListener("click", function () {
-        removeBackSection();
-        for (let j = 0; j < totalNavList; j++) {
-            if (navList[j].querySelector("a").classList.contains("active")) {
-                addBackSection(j);
-            }
-            navList[j].querySelector("a").classList.remove("active");
-        }
-        this.classList.add("active")
-        showSection(this);
-        if (window.innerWidth < 1200) {
-            asideSectionTogglerBtn();
-        }
-    })
-}
-
-function removeBackSection() {
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.remove("back-section");
+    constructor() {
+        this._navList = document.querySelectorAll(".nav li");
+        this._totalNavList = this._navList.length;
+        this._sectionList = document.querySelectorAll(".section");
+        this._totalSectionList = this._sectionList.length;
+        this._navTogglerBtn = document.querySelector(".nav-toggler");
+        this.init();
     }
-}
 
-function addBackSection(num) {
-    allSection[num].classList.add("back-section");
-}
-
-function showSection(element) {
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.remove("active");
+    /**
+     * Sets up all click listeners.
+     */
+    init() {
+        this.addNavClickListener();
+        this.addButtonClickListener();
+        this.addTabsClickListener();
+        this.addNavTogglerClickListener();
     }
-    const target = element.getAttribute("href").split("#")[1];
-    document.querySelector("#" + target).classList.add("active")
-}
 
-function updateNav(element) {
-    for (let i = 0; i < totalNavList; i++) {
-        navList[i].querySelector("a").classList.remove("active");
+    /**
+     * Click listeners for all left-side menu sections.
+     */
+    addNavClickListener() {
+        for (let i = 0; i < this._totalNavList; i++) {
+            const a = this._navList[i].querySelector("a");
+            a.addEventListener("click",  () => {
+                this.removeBackSection();
+                for (let j = 0; j < this._totalNavList; j++) {
+                    if (this.modifyClassList(this._navList[j].querySelector("a"), "contains", "active")) {
+                        this.addBackSection(j);
+                    }
+                    this.modifyClassList(this._navList[j].querySelector("a"), "remove", "active");
+                }
+                this.modifyClassList(a, "add", "active");
+                this.showSection(a);
+                if (window.innerWidth < 1200) {
+                    this.asideSectionTogglerBtn();
+                }
+            });
+        }
+    }
+
+    /**
+     * Click listeners for all all buttons.
+     */
+    addButtonClickListener() {
+        for (let btn of document.querySelectorAll(".href")) {
+            btn.addEventListener("click", () => {this.buttonClick(btn)});
+        }
+    }
+
+    /**
+     * Click listeners for all resume tabs.
+     */
+    addTabsClickListener() {
+        for (let tab of document.querySelectorAll(".resume-tabs a")) {
+            tab.addEventListener("click", () => {this.tabClick(tab)});
+        }
+    }
+
+    /**
+     * Click listener for the navigation toggler button.
+     */
+    addNavTogglerClickListener() {
+        this._navTogglerBtn.addEventListener("click", () => this.asideSectionTogglerBtn());
+    }
+
+    /**
+     * Helper class to handle button clicks.
+     * 
+     * @param {Object} element      Reference to the HTML button element.
+     */
+    buttonClick(element) {
+        const sectionIndex = this.getActive();
+        this.showSection(element);
+        this.updateNav(element);
+        this.removeBackSection();
+        this.addBackSection(sectionIndex);
+    }
+
+    /**
+     * Helper class to handle tab clicks.
+     * 
+     * @param {Object} element      Reference to the HTML tab element.
+     */
+    tabClick(element) {
+        for (let title of document.querySelectorAll(".resume-title")) {
+            this.modifyClassList(title, "remove", "active");
+        }
+        this.modifyClassList(element.querySelector(".resume-title"), "add", "active");
+        for (let item of document.querySelectorAll(".resume-item")) {
+            this.modifyClassList(item, "remove", "active");
+        }
+        this.modifyClassList(document.getElementById(element.className), "add", "active");
+    }
+
+    /**
+     * Helper class to modify the class list of an HTML element.
+     * 
+     * @param {Object} element      Reference to the HTML element.
+     * @param {String} fn           Name of the function to invoke.
+     * @param {String} arg          Argument to pass to function `fn`.
+     */
+    modifyClassList(element, fn, arg) {
+        return element.classList[fn](arg);
+    }
+
+    /**
+     * Helper class to modify the class list of all section elements.
+     * 
+     * @param {String} fn           Name of the function to invoke.
+     * @param {String} arg          Argument to pass to function `fn`.
+     */
+    iterateSectionList(fn, arg) {
+        for (let section of this._sectionList) {
+            this.modifyClassList(section, fn, arg);
+        }
+    }
+
+    /**
+     * Removes the `back-section` token from the class lists of all section elements.
+     */
+    removeBackSection() {
+        this.iterateSectionList("remove", "back-section");
+    }
+
+    /**
+     * Adds the `back-section` token to the `num`-th section element.
+     * 
+     * @param {Number} num        Position in `sectionList`.
+     */
+    addBackSection(num) {
+        this.modifyClassList(this._sectionList[num], "add", "back-section");
+    }
+
+    /**
+     * Switches the active section shown on screen.
+     * 
+     * @param {Object} element      Reference to the HTML element.
+     */
+    showSection(element) {
+        this.iterateSectionList("remove", "active");
         const target = element.getAttribute("href").split("#")[1];
-        if (target === navList[i].querySelector("a").getAttribute("href").split("#")[1]) {
-            navList[i].querySelector("a").classList.add("active");
+        this.modifyClassList(document.querySelector("#" + target), "add", "active");
+    }
+
+    /**
+     * Updates the left-side navigation when a new section becomes avtive.
+     * 
+     * @param {Object} element      Reference to the HTML element.
+     */
+    updateNav(element) {
+        for (let i = 0; i < this._totalNavList; i++) {
+            const a = this._navList[i].querySelector("a");
+            this.modifyClassList(a, "remove", "active");
+            const target = element.getAttribute("href").split("#")[1];
+            if (target === a.getAttribute("href").split("#")[1]) {
+                this.modifyClassList(a, "add", "active");
+            }
         }
     }
-}
 
-function getActive() {
-    for (let i = 0; i < totalNavList; i++) {
-        if (navList[i].querySelector("a").classList.contains("active")) {
-            return i
+    /**
+     * Returns the index of current active section.
+     * 
+     * @returns {Number}    Index of the current active section in `navList`.
+     */
+    getActive() {
+        for (let i = 0; i < this._totalNavList; i++) {
+            if (this.modifyClassList(this._navList[i].querySelector("a"), "contains", "active")) {
+                return i
+            }
         }
+        return 0;
     }
-    return 0;
+
+    /**
+     * Opens/closes the left-side menu.
+     */
+    asideSectionTogglerBtn() {
+        this.modifyClassList(document.querySelector(".aside"), "toggle", "open");
+        this.modifyClassList(this._navTogglerBtn, "toggle", "open");
+        this.iterateSectionList("toggle", "open");
+    }
 }
 
-function asideSectionTogglerBtn() {
-    document.querySelector(".aside").classList.toggle("open");
-    navTogglerBtn.classList.toggle("open");
-    for (let i = 0; i < totalSection; i++) {
-        allSection[i].classList.toggle("open");
-    }
-}
-
-function buttonClick(reference) {
-    const sectionIndex = getActive();
-    showSection(reference);
-    updateNav(reference);
-    removeBackSection();
-    addBackSection(sectionIndex);
-}
-
-function tabClick(reference) {
-    for (let title of document.querySelectorAll(".resume-title")) {
-        title.classList.remove("active");
-    }
-    reference.querySelector(".resume-title").classList.add("active");
-
-    for (let item of document.querySelectorAll(".resume-item")) {
-        item.classList.remove("active");
-    }
-    document.getElementById(reference.className).classList.add("active");
-}
 
 /* Initialize navigation */
-navTogglerBtn.addEventListener("click", () => asideSectionTogglerBtn());
-document.querySelector(".about-me").addEventListener("click", function () {buttonClick(this)});
-document.querySelector(".my-experience").addEventListener("click", function () {buttonClick(this)});
-document.querySelector(".my-portfolio").addEventListener("click", function () {buttonClick(this)});
-document.querySelector(".contact-me").addEventListener("click", function () {buttonClick(this)});
-document.querySelector(".logo-href").addEventListener("click", function () {buttonClick(this)});
-document.querySelector(".resume-tabs .work-experience").addEventListener("click", function () {tabClick(this)});
-document.querySelector(".resume-tabs .education").addEventListener("click", function () {tabClick(this)});
-document.querySelector(".resume-tabs .volunteering").addEventListener("click", function () {tabClick(this)});
+const nav = new Navigation();

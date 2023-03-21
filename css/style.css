@@ -604,7 +604,7 @@ a {
     margin-left: 1.25rem;
 }
 
-.experience .experience-content .my-portfolio {
+.experience .experience-content .btn {
     margin-top: 2rem;
 }
 
@@ -772,8 +772,6 @@ a {
     .contact .contact-info-item,
     .portfolio .portfolio-item,
     .about .about-item,
-    .experience .experience-content .work-experience,
-    .experience .experience-content .education,
     .experience .experience-content .technology,
     .experience .experience-content .expertise {
         flex: 0 0 100%;
