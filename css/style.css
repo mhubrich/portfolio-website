@@ -504,6 +504,7 @@ a {
 .experience .experience-content .resume .resume-tabs {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     margin-bottom: 0.5rem;
 }
 
@@ -511,7 +512,6 @@ a {
     opacity: 50%;
     cursor: pointer;
     margin-bottom: 0;
-    margin-right: 1rem;
     transition: all 0.3S ease;
 }
 
@@ -807,7 +807,6 @@ a {
     }
 
     .experience .experience-content .resume .resume-tabs .resume-title {
-        margin-right: 0;
         padding-left: 0.5rem;
         border-left: 0.25rem solid;
     }
